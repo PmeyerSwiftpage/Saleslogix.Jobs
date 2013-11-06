@@ -29,8 +29,12 @@ namespace SalesLogix.DeliverySystems
         public const string Bcc = "Bcc";
     }
 
-    public class DeliverySystem
+    public class DeliverySystem : IDisposable
     {
+        public void Dispose()
+        {
+        }
+
         public void Send(IDeliveryItem di)
         {
             bool result = false;

@@ -56,8 +56,10 @@ namespace SalesLogix.Jobs.Delivery
 
         private void ProcessDeliveryItem(IDeliveryItem deliveryItem)
         {
-            DeliverySystem ds = new DeliverySystem();
-            ds.Send(deliveryItem);
+            using (DeliverySystem ds = new DeliverySystem())
+            {
+                ds.Send(deliveryItem);
+            }
         }
     }
 }
