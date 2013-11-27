@@ -302,6 +302,7 @@ namespace SalesLogix.Jobs.Notification
             foreach (string target in targets)
             {
                 IDeliveryItemTarget t = EntityFactory.Create<IDeliveryItemTarget>();
+                t.DeliveryItem = deliveryItem;
                 t.Address = target;
                 t.Type = DeliverySystems.DeliveryItemTargetTypes.To;
                 deliveryItem.DeliveryItemTargets.Add(t);
